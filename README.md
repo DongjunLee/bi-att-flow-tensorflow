@@ -3,12 +3,15 @@
 TensorFlow implementation of [Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/abs/1611.01603) with [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) Task.
 
 
+![images](images/bi_att_flow_architecture.png)
+
+
 ## Requirements
 
 - Python 3.6
 - TensorFlow 1.4
 - [hb-config](https://github.com/hb-research/hb-config) (Singleton Config)
-- nltk (tokenizer and blue score)
+- nltk (tokenizer)
 - tqdm (progress bar)
 
 
@@ -34,8 +37,7 @@ Reference : [hb-config](https://github.com/hb-research/hb-config), [Dataset](htt
 
 ## Todo
 
-- Implements Multi-Head Masked opt
-- Train and evaluate with 'WMT German-English (2016)' dataset
+- Implements BiDAF with SQuAD task.
 
 ## Config
 
@@ -67,7 +69,6 @@ train:
 ```
 
 * debug mode : using [tfdbg](https://www.tensorflow.org/programmers_guide/debugger)
-* `check-tiny` is a data set with about **30 sentences** that are translated from Korean into English. (recommend read it :) )
 
 ## Usage
 
@@ -90,13 +91,13 @@ Finally, start train and evaluate model
 :white_medium_small_square: : Not tested yet.
 
 
-- : white_medium_small_square: `evaluate` : Evaluate on the evaluation data.
+- :white_medium_small_square: `evaluate` : Evaluate on the evaluation data.
 - :white_medium_small_square: `extend_train_hooks` :  Extends the hooks for training.
 - :white_medium_small_square: `reset_export_strategies` : Resets the export strategies with the new_export_strategies.
 - :white_medium_small_square: `run_std_server` : Starts a TensorFlow server and joins the serving thread.
 - :white_medium_small_square: `test` : Tests training, evaluating and exporting the estimator for a single step.
-- : white_medium_small_square: `train` : Fit the estimator using the training data.
-- : white_medium_small_square: `train_and_evaluate` : Interleaves training and evaluation.
+- :white_medium_small_square: `train` : Fit the estimator using the training data.
+- :white_medium_small_square: `train_and_evaluate` : Interleaves training and evaluation.
 
 ---
 
@@ -107,7 +108,8 @@ Finally, start train and evaluate model
 
 ## Reference
 
-- [Paper - Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/abs/1611.01603) (2016. 11) by Minjoon Seo)
+- [hb-research/notes - Bidirectional Attention Flow for Machine Comprehension](https://hb-research.github.io/notes/notes/bi_att_flow.html)
+- [Paper - Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/abs/1611.01603) (2016. 11) by Minjoon Seo
 
 ## Author
 
